@@ -60,10 +60,26 @@ footer {
     right: 0;
 }
 
+#socialFooter {
+    float: right;
+}
+
+#socialFooter img {
+    margin-right: 1em;
+}
+
 /* Main content */
-img {
+#mainImg {
     position: fixed;
     top: 1em;
+}
+
+#social {
+    width: 100%;
+}
+
+.socialIcon {
+    width: 100%;
 }
 
 h1 {

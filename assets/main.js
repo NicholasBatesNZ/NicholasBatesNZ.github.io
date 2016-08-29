@@ -14,7 +14,7 @@ function change() {
     else if (document.getElementById("contact").checked) {
         fileLocation = "contact/contact.html";
         mainImage = "contact/rosie.jpg";
-        heading = "Contact Me";
+        heading = "Find Me";
     }
     else {
         fileLocation = "error/oobe.html";
