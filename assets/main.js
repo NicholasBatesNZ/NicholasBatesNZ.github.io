@@ -29,6 +29,13 @@ function change() {
 function sizeHeader() {
     $("#headingDiv").css("top", document.getElementById("nav").getBoundingClientRect().bottom);
     $("#headingDiv").css("bottom", window.innerHeight - document.getElementById("dynamic").getBoundingClientRect().top);
+
+    if ($(this).scrollTop() > document.getElementById("headingDiv").getBoundingClientRect().bottom * 2) {
+        $("#heading").fadeOut(200);
+    }
+    else {
+        $("#heading").fadeIn(200);
+    }
 }
 
 function init() {
