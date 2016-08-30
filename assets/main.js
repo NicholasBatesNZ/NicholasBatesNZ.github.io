@@ -18,7 +18,7 @@ function change() {
     }
     else {
         fileLocation = "error/oobe.html";
-        mainImage = "error/Me.jpg";
+        mainImage = "error/error.jpg";
         heading = "Error";
     }
     $("#mainImg").attr("src", mainImage)

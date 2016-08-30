@@ -105,7 +105,7 @@ article {
     background-color: rgba(255, 255, 255, 0.75);
 }
 
-p, ul:not(#navul), .blogImg, table, audio {
+p, ul:not(#navul), .contentImg, table, audio {
     padding-top: 1%;
 }
 
@@ -117,7 +117,7 @@ table, #social, .socialIcon {
     width: 100%;
 }
 
-table audio, .blogImg {
+table audio, .contentImg {
     display: block;
     margin-left: auto;
     margin-right: auto;
