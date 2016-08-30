@@ -60,7 +60,7 @@ footer {
     right: 0;
 }
 
-#socialFooter {
+#footerName {
     float: right;
 }
 
@@ -113,7 +113,7 @@ ul:not(#navul) {
     margin-left: 2%;
 }
 
-table, #social, .socialIcon {
+table, #social {
     width: 100%;
 }
 
@@ -126,4 +126,8 @@ table audio, .contentImg {
 
 td {
     text-align: center;
+}
+
+.socialIcon {
+    width: 25%;
 }
