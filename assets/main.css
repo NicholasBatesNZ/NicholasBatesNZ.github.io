@@ -45,11 +45,6 @@ label {
     transition: all .3s ease-in-out;
 }
 
-#navName {
-    padding-right: 1%;
-    color: #FFFBD0;
-}
-
 /* Footer */
 footer {
     padding: 1%;
