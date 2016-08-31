@@ -71,7 +71,7 @@ footer {
 }
 
 h1 {
-    font-size: 7em;
+    font-size: 15vh;
     color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -126,4 +126,11 @@ td {
 
 .socialIcon {
     width: 25%;
+}
+
+@media all and (orientation:portrait) {
+    #mainImg {
+        height: 100%;
+        width: auto;
+    }
 }
