@@ -41,7 +41,7 @@ label:hover {
 
 label {
     cursor: pointer;
-    padding: 1% 2% 1% 2%;
+    padding: 1% 2%;
     transition: all .3s ease-in-out;
 }
 
