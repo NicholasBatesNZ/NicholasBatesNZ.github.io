@@ -34,19 +34,20 @@ header nav {
 nav span {
   float: left;
   width: 8vw;
+  font-size: 2vh;
   transition: all .5s;
-  padding: 0.5vw;
+  padding: .8vh 0.5vw;
   margin-left: 1.5vw;
-  border: 1px solid white; }
+  outline: 1px solid white; }
 
 nav span.selected {
   background-color: #63BBF0;
   color: black;
-  border: 1px solid #63BBF0; }
+  outline: 1px solid #63BBF0; }
 
 nav span:hover {
   background-color: #245C92;
-  border: 1px solid #245C92; }
+  outline: 1px solid #245C92; }
 
 #headerBuffer.small, header.small {
   height: 10vh; }
