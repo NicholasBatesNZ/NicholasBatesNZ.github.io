@@ -9,10 +9,11 @@ header, #headerBuffer {
   color: white; }
 
 header {
-  width: 100vw;
   position: fixed;
+  width: 100vw;
   z-index: 10;
-  text-align: center; }
+  text-align: center;
+  outline: #E8DEDE solid thin; }
 
 #headerBuffer, header, header a, header nav {
   transition: all 1s; }
@@ -24,19 +25,37 @@ header {
 header img {
   height: 100%; }
 
-#headerBuffer.small, header.small {
-  height: 10vh; }
-
-header.small a {
-  transform: translate(-160%, 20%); }
-
 header nav {
-  width: 40vw;
+  width: 55vw;
+  margin-top: 2vh;
   margin-left: auto;
   margin-right: auto; }
 
+nav span {
+  float: left;
+  width: 8vw;
+  transition: all .5s;
+  padding: 0.5vw;
+  margin-left: 1.5vw;
+  border: 1px solid white; }
+
+nav span.selected {
+  background-color: #63BBF0;
+  color: black;
+  border: 1px solid #63BBF0; }
+
+nav span:hover {
+  background-color: #245C92;
+  border: 1px solid #245C92; }
+
+#headerBuffer.small, header.small {
+  height: 10vh; }
+
+header.small #logo {
+  transform: translate(-30vw, 1.5vh); }
+
 header.small nav {
-  transform: translate(20%, -150%); }
+  transform: translate(11vw, -6.5vh); }
 
 footer {
   text-align: center;
@@ -64,7 +83,7 @@ footer a {
 
 #slideshow {
   position: relative;
-  background-color: forestgreen; }
+  background-color: #060708; }
 
 #slideshow > img {
   position: absolute;
@@ -73,6 +92,7 @@ footer a {
 
 #slideshow > .arrow {
   font-size: 4em;
+  color: #E8DEDE;
   position: absolute;
   top: 50%;
   transform: translate(0, -50%); }
