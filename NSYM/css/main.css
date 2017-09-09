@@ -6,7 +6,7 @@ header, #headerBuffer {
 
 #headerBuffer, header {
   background-color: #060708;
-  color: white; }
+  color: #EDE6E6; }
 
 header {
   position: fixed;
@@ -35,18 +35,20 @@ nav span {
   float: left;
   width: 8vw;
   font-size: 2vh;
+  font-family: 'Open Sans';
   transition: all .5s;
   padding: .8vh 0.5vw;
   margin-left: 1.5vw;
-  outline: 1px solid white; }
+  outline: 1px solid #EDE6E6; }
 
 nav span.selected {
   background-color: #63BBF0;
-  color: black;
+  color: #060708;
   outline: 1px solid #63BBF0; }
 
 nav span:hover {
   background-color: #245C92;
+  color: white;
   outline: 1px solid #245C92; }
 
 #headerBuffer.small, header.small {
@@ -61,7 +63,14 @@ header.small nav {
 footer {
   text-align: center;
   padding: 1em;
-  background-color: yellow; }
+  background-color: #060708;
+  color: #EDE6E6;
+  font-family: 'Roboto Slab'; }
+  footer a {
+    color: inherit;
+    font-family: 'Open Sans', sans-serif; }
+  footer b {
+    font-family: 'Roboto', sans-serif; }
 
 #footerTable {
   display: table;
@@ -75,9 +84,6 @@ footer {
 footer ul {
   padding: 0;
   list-style: none; }
-
-footer a {
-  color: inherit; }
 
 #slideshow, #slideshow > img {
   height: 70vh; }
@@ -109,22 +115,49 @@ footer a {
   height: 50vh;
   grid-template-areas: "history history audition audition" "history history contact facebook" "history history contact facebook" "history history contact facebook";
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr; }
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border-top: 1px solid #EDE6E6;
+  border-bottom: 1px solid #EDE6E6; }
+
+#grid div:not(.inside) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #EDE6E6;
+  color: #060708; }
+
+#grid .inside {
+  text-align: center;
+  margin: 2vh 2vw; }
 
 #grid > #history {
-  grid-area: history;
-  background-color: hotpink; }
+  grid-area: history; }
+  #grid > #history h2 {
+    font-family: 'Roboto', sans-serif; }
+  #grid > #history p {
+    font-family: 'Open Sans', sans-serif; }
 
 #grid > #audition {
-  grid-area: audition;
-  background-color: blueviolet; }
-
-#grid > #facebook {
-  grid-area: facebook;
-  background-color: greenyellow; }
+  grid-area: audition; }
+  #grid > #audition a {
+    background: linear-gradient(#245C92, #63BBF0);
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #EDE6E6;
+    border: 3px solid #245C92;
+    border-radius: 5px;
+    font-size: 5vh;
+    font-family: 'Roboto Slab', serif;
+    transition: all .5s;
+    padding: 2vh 1vw; }
+  #grid > #audition a:hover {
+    background: linear-gradient(#245C92, rgba(182, 148, 239, 0.87));
+    color: white; }
 
 #grid > #contact {
-  grid-area: contact;
-  background-color: orangered; }
+  grid-area: contact; }
+
+#grid > #facebook {
+  grid-area: facebook; }
 
 /*# sourceMappingURL=main.css.map */
