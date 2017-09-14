@@ -60,6 +60,17 @@ header.small #logo {
 header.small nav {
   transform: translate(11vw, -6.5vh); }
 
+header nav span div {
+  position: fixed;
+  background-color: hotpink;
+  display: none; }
+
+header nav span div.active {
+  display: initial; }
+
+.anchor {
+  cursor: pointer; }
+
 footer {
   text-align: center;
   padding: 1em;
@@ -69,6 +80,8 @@ footer {
   footer a {
     color: inherit;
     font-family: 'Open Sans', sans-serif; }
+  footer a:hover {
+    color: white; }
   footer b {
     font-family: 'Roboto', sans-serif; }
 
@@ -143,7 +156,7 @@ footer ul {
     background: linear-gradient(#245C92, #63BBF0);
     text-decoration: none;
     text-transform: uppercase;
-    color: #EDE6E6;
+    color: #323232;
     border: 3px solid #245C92;
     border-radius: 5px;
     font-size: 5vh;
@@ -152,7 +165,7 @@ footer ul {
     padding: 2vh 1vw; }
   #grid > #audition a:hover {
     background: linear-gradient(#245C92, rgba(182, 148, 239, 0.87));
-    color: white; }
+    color: #060708; }
 
 #grid > #contact {
   grid-area: contact; }
