@@ -71,11 +71,12 @@ header nav span div {
   display: none; }
   header nav span div ul {
     padding: 0;
-    list-style: none;
-    outline: #060708 solid thin; }
+    list-style: none; }
     header nav span div ul a {
       float: left;
       width: 8vw;
+      margin: 0 -.5vw;
+      padding: .8vh .5vw;
       background-color: #060708;
       outline: #EDE6E6 solid thin; }
     header nav span div ul a:hover {
