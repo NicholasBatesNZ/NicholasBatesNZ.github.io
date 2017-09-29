@@ -13,7 +13,7 @@ header {
   width: 100vw;
   z-index: 10;
   text-align: center;
-  outline: #E8DEDE solid thin; }
+  box-shadow: 0 0 0 1px #E8DEDE; }
 
 #headerBuffer, header, header a, header nav {
   transition: all 1s; }
@@ -40,11 +40,15 @@ nav span {
   padding: .8vh 0.5vw;
   margin-left: 1.5vw;
   outline: 1px solid #EDE6E6; }
+  nav span a {
+    text-decoration: none;
+    color: #EDE6E6; }
 
 nav span.selected {
   background-color: #63BBF0;
-  color: #060708;
   outline: 1px solid #63BBF0; }
+  nav span.selected a {
+    color: #060708; }
 
 nav span:hover {
   background-color: #245C92;
@@ -60,16 +64,26 @@ header.small #logo {
 header.small nav {
   transform: translate(11vw, -6.5vh); }
 
+header nav span {
+  cursor: pointer; }
+
 header nav span div {
-  position: fixed;
-  background-color: hotpink;
   display: none; }
+  header nav span div ul {
+    padding: 0;
+    list-style: none;
+    outline: #060708 solid thin; }
+    header nav span div ul a {
+      float: left;
+      width: 8vw;
+      background-color: #060708;
+      outline: #EDE6E6 solid thin; }
+    header nav span div ul a:hover {
+      background-color: #245C92;
+      color: white; }
 
 header nav span div.active {
-  display: initial; }
-
-.anchor {
-  cursor: pointer; }
+  display: inherit; }
 
 footer {
   text-align: center;
@@ -84,6 +98,9 @@ footer {
     color: white; }
   footer b {
     font-family: 'Roboto', sans-serif; }
+  footer ul {
+    padding: 0;
+    list-style: none; }
 
 #footerTable {
   display: table;
@@ -93,10 +110,6 @@ footer {
 .footerCell {
   display: table-cell;
   line-height: 1.5; }
-
-footer ul {
-  padding: 0;
-  list-style: none; }
 
 #slideshow, #slideshow > img {
   height: 70vh; }

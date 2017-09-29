@@ -7,4 +7,8 @@ $(document).ready(function() {
     $("nav span").hover(function() {
         $(this).children("div").toggleClass("active");
     });
+
+    $("nav span").click(function() {
+        $(this).children("a")[0].click();
+    });
 });
