@@ -153,6 +153,23 @@ footer {
 #slideshow > #right {
   right: 5vw; }
 
+#slideshow .dot {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  bottom: 1em;
+  z-index: 2;
+  border-radius: 50%;
+  background-color: #060708;
+  cursor: pointer;
+  transition: .2s all; }
+
+#slideshow .dot.active {
+  background-color: #63BBF0; }
+
+#slideshow .dot:hover {
+  background-color: #245C92; }
+
 #grid {
   display: grid;
   height: 50vh;
