@@ -67,4 +67,15 @@ $(document).ready(function() {
         destination++;
         updateSlide();
     }, 5000);
+    
+    sizeFacebook();
+    $(window).resize(sizeFacebook);
+    function sizeFacebook() {
+        $("#facebook").empty();
+        var fbWidth = Math.round($("#facebook").width() / 20 * 19);
+        var fbHeight = Math.round($("#facebook").height() / 20 * 19);
+        $("#facebook").append("<iframe src='https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FNorthShoreYouthMusic&tabs=timeline&" +
+        "width=" + fbWidth +"&height=" + fbHeight + "&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId' " +
+        "width='" + fbWidth + "' height='" + fbHeight + "' style='border:none;overflow:hidden' scrolling='no' frameborder='0' allowTransparency='true'></iframe>");
+    }
 });

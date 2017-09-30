@@ -222,8 +222,5 @@ footer {
 
 #grid > #facebook {
   grid-area: facebook; }
-  #grid > #facebook iframe {
-    width: 95%;
-    height: 95%; }
 
 /*# sourceMappingURL=main.css.map */
