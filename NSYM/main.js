@@ -26,6 +26,7 @@ $(document).ready(function() {
         });
     }
     function updateSlide() {
+        $("#slideshow").css("pointer-events", "none");
         
         if (destination > $images.length-1) {
             destination = 0;
@@ -39,6 +40,7 @@ $(document).ready(function() {
                 $(".dot#" + index).addClass("active");
                 $(this).hide().fadeIn(250, function() {
                     $(this).css("z-index", "1");
+                    $("#slideshow").css("pointer-events", "initial");
                 });
             }
             else {

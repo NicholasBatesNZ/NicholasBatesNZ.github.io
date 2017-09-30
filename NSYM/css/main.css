@@ -172,12 +172,14 @@ footer {
 
 #grid {
   display: grid;
-  height: 50vh;
   grid-template-areas: "history history audition audition" "history history contact facebook" "history history contact facebook" "history history contact facebook";
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   border-top: 1px solid #EDE6E6;
-  border-bottom: 1px solid #EDE6E6; }
+  border-bottom: 1px solid #EDE6E6;
+  font-family: 'Open Sans', sans-serif; }
+  #grid h2 {
+    font-family: 'Roboto', sans-serif; }
 
 #grid div:not(.inside) {
   display: flex;
@@ -192,10 +194,6 @@ footer {
 
 #grid > #history {
   grid-area: history; }
-  #grid > #history h2 {
-    font-family: 'Roboto', sans-serif; }
-  #grid > #history p {
-    font-family: 'Open Sans', sans-serif; }
 
 #grid > #audition {
   grid-area: audition; }
@@ -216,6 +214,11 @@ footer {
 
 #grid > #contact {
   grid-area: contact; }
+  #grid > #contact input, #grid > #contact textarea {
+    font-family: 'Open Sans', sans-serif;
+    width: 98%; }
+  #grid > #contact textarea {
+    resize: none; }
 
 #grid > #facebook {
   grid-area: facebook; }
