@@ -274,9 +274,6 @@ nav.mobile {
   display: none; }
 
 @media screen and (orientation: portrait) {
-  body {
-    overflow-x: hidden; }
-
   .mobile {
     display: initial; }
 
@@ -300,7 +297,11 @@ nav.mobile {
     transform: translate(36vw, -10vh); }
 
   #slideshow, #slideshow > img {
-    height: 35vh; }
+    height: 35vh;
+    width: 100vw; }
+
+  #slideshow img {
+    object-fit: cover; }
 
   #slideshow .arrow {
     font-size: 3em;

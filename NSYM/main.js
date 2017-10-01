@@ -16,6 +16,11 @@ $(document).ready(function() {
     $("header #hamburger").click(function() {
         $("nav.mobile").slideToggle();
     });
+    $("body").click(function(event) {
+        if (!$(event.target).is(".mobile") && $(event.target).css("display") != "none") {
+            $("nav.mobile").slideUp();
+        }
+    });
 
     var $images = $("#slideshow").children("img");
     var destination = 0;
