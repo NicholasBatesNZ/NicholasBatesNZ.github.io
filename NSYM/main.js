@@ -17,7 +17,7 @@ $(document).ready(function() {
         $("nav.mobile").slideToggle();
     });
     $("body").click(function(event) {
-        if (!$(event.target).is(".mobile") && $(event.target).css("display") != "none") {
+        if (!($(event.target).is(".mobile") || $(event.target).parents(".mobile").length > 0) && $("nav.mobile").css("display") != "none") {
             $("nav.mobile").slideUp();
         }
     });

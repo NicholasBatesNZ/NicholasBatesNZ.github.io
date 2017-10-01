@@ -292,7 +292,7 @@ nav.mobile {
     transform: none;
     height: 100%; }
   header.small img {
-    width: 95%; }
+    width: 65vw; }
   header.small #hamburger {
     transform: translate(36vw, -10vh); }
 
