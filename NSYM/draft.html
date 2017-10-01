@@ -14,39 +14,73 @@
         <div id="fb-root"></div>
         <header>
             <a id="logo" href="draft.html" title="Home"><img src="http://www.nsym.org.nz/wp-content/uploads/2013/10/cropped-Logo-black-background-rgb-small.jpg"></a>
-            <nav>
-                <span><a href="#">Apply/Audition</a></span>
-                <span><a href="contact.html">Contact</a></span>
-                <span><a href="#">Choirs</a>
+            <nav class="desktop">
+                <span class="link"><a href="#">Apply/Audition</a></span>
+                <span class="link"><a href="contact.html">Contact</a></span>
+                <span class="dropdown"><span>Choirs</span>
                     <div>
                         <ul>
-                            <li><a href="#">Songters</a></li>
-                            <li><a href="#">Children's Choir</a></li>
-                            <li><a href="#">Youth Choir</a></li>
+                            <li class="link"><a href="#">Songters</a></li>
+                            <li class="link"><a href="#">Children's Choir</a></li>
+                            <li class="link"><a href="#">Youth Choir</a></li>
                         </ul>
                     </div>
                 </span>
-                <span><a href="#">Orchestras</a>
+                <span class="dropdown"><span>Orchestras</span>
                     <div>
                         <ul>
-                            <li><a href="#">Stringalongs</a></li>
-                            <li><a href="#">Junior Orchestra</a></li>
-                            <li><a href="#">Youth Orchestra</a></li>
+                            <li class="link"><a href="#">Stringalongs</a></li>
+                            <li class="link"><a href="#">Junior Orchestra</a></li>
+                            <li class="link"><a href="#">Youth Orchestra</a></li>
                         </ul>
                     </div>
                 </span>
-                <span><a href="#">About</a>
+                <span class="dropdown"><span>About</span>
                     <div>
                         <ul>
-                            <li><a href="#">Musical Directors</a></li>
-                            <li><a href="#">Event Calendar</a></li>
-                            <li><a href="#">Rehearsal Schedules</a></li>
+                            <li class="link"><a href="#">Musical Directors</a></li>
+                            <li class="link"><a href="#">Event Calendar</a></li>
+                            <li class="link"><a href="#">Rehearsal Schedules</a></li>
                         </ul>
                     </div>
                 </span>
             </nav>
+            <span class="mobile" id="hamburger">&#8801;</span>
         </header>
         <div id="headerBuffer"></div>
+        <nav class="mobile">
+            <ul>
+                <li class="link"><a href="#">Apply/Audition</a></li>
+                <li class="link"><a href="#">Contact</a></li>
+                <li class="dropdown"><span>Choirs</span>
+                    <div>
+                        <ul>
+                            <li class="link"><a href="#">Songters</a></li>
+                            <li class="link"><a href="#">Children's Choir</a></li>
+                            <li class="link"><a href="#">Youth Choir</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown"><span>Orchestras</span>
+                    <div>
+                        <ul>
+                            <li class="link"><a href="#">Stringalongs</a></li>
+                            <li class="link"><a href="#">Junior Orchestra</a></li>
+                            <li class="link"><a href="#">Youth Orchestra</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown"><span>Abouts</span>
+                    <div>
+                        <ul>
+                            <li class="link"><a href="#">Musical Directors</a></li>
+                            <li class="link"><a href="#">Event Calendar</a></li>
+                            <li class="link"><a href="#">Rehearsal Schedules</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
         <div id="slideshow">
             <span id="left" class="arrow noSelect">&lsaquo;</span>
             <img src="https://www.apo.co.nz/media/1012/maxresdefault.jpg?anchor=center&mode=crop&width=1200&height=630&rnd=131185132930000000">
@@ -90,7 +124,7 @@
             </div>
             <div id="facebook"></div>
         </div>
-        <footer>
+        <footer class="desktop">
             <ul id="footerTable">
                 <li class="footerCell">
                     <a href="#"><b>Choirs</b></a>
@@ -126,5 +160,6 @@
             </ul>
             &copy; 2017 North Shore Youth Music
         </footer>
+        <footer class="mobile"><p>&copy; 2017 North Shore Youth Music</p></footer>
     </body>
 </html>

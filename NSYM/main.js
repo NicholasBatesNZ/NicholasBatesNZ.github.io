@@ -4,11 +4,17 @@ $(document).ready(function() {
         $("header, #headerBuffer").toggleClass("small", $(document).scrollTop() > 10);
     });
 
-    $("nav span").hover(function() {
+    $("nav.desktop .dropdown").hover(function() {
         $(this).children("div").toggleClass("active");
     });
-    $("nav span").click(function() {
+    $("nav.mobile ul .dropdown").click(function() {
+        $(this).children("div").slideToggle();
+    });
+    $("nav.desktop .link, nav.mobile ul .link").click(function() {
         $(this).children("a")[0].click();
+    });
+    $("header #hamburger").click(function() {
+        $("nav.mobile").slideToggle();
     });
 
     var $images = $("#slideshow").children("img");

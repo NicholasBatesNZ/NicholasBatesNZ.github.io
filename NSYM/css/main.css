@@ -21,7 +21,7 @@ header {
   text-align: center;
   box-shadow: 0 0 0 1px #EDE6E6; }
 
-#headerBuffer, header, header a, header nav {
+#headerBuffer, header, header a, header nav.desktop {
   transition: all 1s; }
 
 #logo {
@@ -29,15 +29,16 @@ header {
   height: 70%; }
 
 header img {
+  transition: all 1s;
   height: 100%; }
 
-header nav {
+header nav.desktop {
   width: 55vw;
   margin-top: 2vh;
   margin-left: auto;
   margin-right: auto; }
 
-nav span {
+nav.desktop > span {
   float: left;
   width: 8vw;
   font-size: 2vh;
@@ -46,17 +47,17 @@ nav span {
   padding: .8vh 0.5vw;
   margin-left: 1.5vw;
   outline: 1px solid #EDE6E6; }
-  nav span a {
+  nav.desktop > span a {
     text-decoration: none;
     color: #EDE6E6; }
 
-nav span.selected {
+nav.desktop > span.selected {
   background-color: #63BBF0;
   outline: 1px solid #63BBF0; }
-  nav span.selected a {
+  nav.desktop > span.selected a {
     color: #060708; }
 
-nav span:hover {
+nav.desktop > span:hover {
   background-color: #245C92;
   color: white;
   outline: 1px solid #245C92; }
@@ -67,45 +68,45 @@ nav span:hover {
 header.small #logo {
   transform: translate(-30vw, 1.5vh); }
 
-header.small nav {
+header.small nav.desktop {
   transform: translate(11vw, -6.5vh); }
 
-header nav span {
+header nav.desktop > span {
   cursor: pointer; }
 
-header nav span div {
+header nav.desktop > span div {
   display: none; }
-  header nav span div ul {
+  header nav.desktop > span div ul {
     padding: 0;
     list-style: none; }
-    header nav span div ul a {
+    header nav.desktop > span div ul a {
       float: left;
       width: 8vw;
       margin: 0 -.5vw;
       padding: .8vh .5vw;
       background-color: #060708;
       outline: #EDE6E6 solid thin; }
-    header nav span div ul a:hover {
+    header nav.desktop > span div ul a:hover {
       background-color: #245C92;
       color: white; }
 
-header nav span div.active {
+header nav.desktop > span div.active {
   display: inherit; }
 
-footer {
+footer.desktop {
   text-align: center;
   padding: 1em;
   background-color: #060708;
   color: #EDE6E6;
   font-family: 'Roboto Slab'; }
-  footer a {
+  footer.desktop a {
     color: inherit;
     font-family: 'Open Sans', sans-serif; }
-  footer a:hover {
+  footer.desktop a:hover {
     color: white; }
-  footer b {
+  footer.desktop b {
     font-family: 'Roboto', sans-serif; }
-  footer ul {
+  footer.desktop ul {
     padding: 0;
     list-style: none; }
 
@@ -136,13 +137,14 @@ footer {
 
 #slideshow > .arrow {
   font-size: 6em;
-  color: #E8DEDE;
+  color: #EDE6E6;
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
   cursor: pointer;
   padding: 0 1vw 1vw 1vw;
-  border-radius: 15px; }
+  border-radius: 15px;
+  z-index: 2; }
 
 #slideshow > .arrow:hover {
   background-color: #245C92; }
@@ -201,6 +203,7 @@ footer {
     background: linear-gradient(#245C92, #63BBF0);
     text-decoration: none;
     text-transform: uppercase;
+    text-align: center;
     color: #323232;
     border: 3px solid #245C92;
     border-radius: 5px;
@@ -222,5 +225,90 @@ footer {
 
 #grid > #facebook {
   grid-area: facebook; }
+
+footer.mobile {
+  text-align: center;
+  font-family: 'Roboto Slab';
+  color: #EDE6E6; }
+  footer.mobile p {
+    background-color: #060708;
+    margin: auto; }
+
+#hamburger {
+  font-size: 3em;
+  width: 0;
+  margin: 0 auto;
+  transform: translateX(-0.25em);
+  transition: 1s all; }
+
+#hamburger:hover {
+  cursor: pointer; }
+
+nav.mobile {
+  display: none;
+  position: fixed;
+  z-index: 3;
+  width: 100vw;
+  text-align: center;
+  background-color: #060708;
+  color: #EDE6E6;
+  font-family: 'Open Sans', sans-serif; }
+  nav.mobile ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none; }
+    nav.mobile ul li {
+      padding: 1vh 0; }
+      nav.mobile ul li a {
+        text-decoration: none;
+        color: #EDE6E6; }
+      nav.mobile ul li div {
+        display: none;
+        font-size: 70%; }
+    nav.mobile ul .link:hover {
+      background-color: #245C92; }
+    nav.mobile ul .dropdown:hover {
+      cursor: pointer; }
+
+.mobile, #hamburger {
+  display: none; }
+
+@media screen and (orientation: portrait) {
+  body {
+    overflow-x: hidden; }
+
+  .mobile {
+    display: initial; }
+
+  #hamburger {
+    display: block; }
+
+  footer.desktop {
+    display: none; }
+
+  header nav.desktop {
+    display: none; }
+  header img {
+    width: 90vw; }
+
+  header.small #logo {
+    transform: none;
+    height: 100%; }
+  header.small img {
+    width: 95%; }
+  header.small #hamburger {
+    transform: translate(36vw, -10vh); }
+
+  #slideshow, #slideshow > img {
+    height: 35vh; }
+
+  #slideshow .arrow {
+    font-size: 3em;
+    padding: 0 2vw 2vw 2vw; }
+
+  #grid {
+    grid-template-areas: "history history history history" "history history history history" "history history history history" "audition audition audition audition"; }
+    #grid #contact, #grid #facebook {
+      display: none; } }
 
 /*# sourceMappingURL=main.css.map */
