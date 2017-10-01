@@ -79,8 +79,16 @@ $(document).ready(function() {
         updateSlide();
     }, 5000);
     
+    $(window).resize(onResize);
+    function onResize() {
+        if ($("nav.mobile").css("display") != "none") {
+            $("nav.mobile").slideUp();
+        }
+        createSlideDots();
+        sizeFacebook();
+    }
+    
     sizeFacebook();
-    $(window).resize(sizeFacebook);
     function sizeFacebook() {
         $("#facebook").empty();
         var fbWidth = Math.round($("#facebook").width() / 20 * 19);
