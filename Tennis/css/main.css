@@ -1,0 +1,295 @@
+body {
+  margin: 0; }
+
+.noSelect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+header, #headerBuffer {
+  height: 30vh; }
+
+#headerBuffer, header {
+  background-color: #060708;
+  color: #EDE6E6; }
+
+header {
+  position: fixed;
+  width: 100vw;
+  z-index: 10;
+  text-align: center;
+  box-shadow: 0 0 0 1px #EDE6E6; }
+
+#headerBuffer, header, header a, header nav.desktop {
+  transition: all 1s; }
+
+#logo {
+  display: inline-block;
+  height: 70%; }
+
+header img {
+  transition: all 1s;
+  height: 100%; }
+
+header nav.desktop {
+  width: 55vw;
+  margin-top: 2vh;
+  margin-left: auto;
+  margin-right: auto; }
+
+nav.desktop > span {
+  float: left;
+  width: 8vw;
+  font-size: 2vh;
+  font-family: 'Open Sans';
+  transition: all .5s;
+  padding: .8vh 0.5vw;
+  margin-left: 1.5vw;
+  outline: 1px solid #EDE6E6; }
+  nav.desktop > span a {
+    text-decoration: none;
+    color: #EDE6E6; }
+
+nav.desktop > span.selected {
+  background-color: #484999;
+  outline: 1px solid #484999; }
+  nav.desktop > span.selected a {
+    color: #060708; }
+
+nav.desktop > span:hover {
+  background-color: #86C958;
+  color: white;
+  outline: 1px solid #86C958; }
+
+#headerBuffer.small, header.small {
+  height: 10vh; }
+
+header.small #logo {
+  transform: translate(-30vw, 1.5vh); }
+
+header.small nav.desktop {
+  transform: translate(11vw, -6.5vh); }
+
+header nav.desktop > span {
+  cursor: pointer; }
+
+header nav.desktop > span div {
+  display: none; }
+  header nav.desktop > span div ul {
+    padding: 0;
+    list-style: none; }
+    header nav.desktop > span div ul a {
+      float: left;
+      width: 8vw;
+      margin: 0 -.5vw;
+      padding: .8vh .5vw;
+      background-color: #060708;
+      outline: #EDE6E6 solid thin; }
+    header nav.desktop > span div ul a:hover {
+      background-color: #86C958;
+      color: white; }
+
+header nav.desktop > span div.active {
+  display: inherit; }
+
+footer.desktop {
+  text-align: center;
+  padding: 1em;
+  background-color: #060708;
+  color: #EDE6E6;
+  font-family: 'Roboto Slab'; }
+  footer.desktop a {
+    color: inherit;
+    font-family: 'Open Sans', sans-serif; }
+  footer.desktop a:hover {
+    color: white; }
+  footer.desktop b {
+    font-family: 'Roboto', sans-serif; }
+  footer.desktop ul {
+    padding: 0;
+    list-style: none; }
+
+#footerTable {
+  display: table;
+  margin: 0 auto;
+  border-spacing: 5em 1em; }
+
+.footerCell {
+  display: table-cell;
+  line-height: 1.5; }
+
+#slideshow, #slideshow > img {
+  height: 70vh; }
+
+#slideshow {
+  position: relative;
+  background-color: #060708; }
+
+#slideshow > img {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: -1; }
+
+#slideshow > img:first-of-type {
+  z-index: 1; }
+
+#slideshow > .arrow {
+  font-size: 6em;
+  color: #EDE6E6;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  cursor: pointer;
+  padding: 0 1vw 1vw 1vw;
+  border-radius: 15px;
+  z-index: 2; }
+
+#slideshow > .arrow:hover {
+  background-color: #86C958; }
+
+#slideshow > #left {
+  left: 5vw; }
+
+#slideshow > #right {
+  right: 5vw; }
+
+#slideshow .dot {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  bottom: 1em;
+  z-index: 2;
+  border-radius: 50%;
+  background-color: #060708;
+  cursor: pointer;
+  transition: .2s all; }
+
+#slideshow .dot.active {
+  background-color: #484999; }
+
+#slideshow .dot:hover {
+  background-color: #86C958; }
+
+#grid {
+  display: grid;
+  grid-template-areas: "history history contact facebook" "history history contact facebook" "history history contact facebook" "history history contact facebook";
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border-top: 1px solid #EDE6E6;
+  border-bottom: 1px solid #EDE6E6;
+  font-family: 'Open Sans', sans-serif; }
+  #grid h2 {
+    font-family: 'Roboto', sans-serif; }
+
+#grid div:not(.inside) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #EDE6E6;
+  color: #060708; }
+
+#grid .inside {
+  text-align: center;
+  margin: 2vh 2vw; }
+
+#grid > #history {
+  grid-area: history; }
+
+#grid > #contact {
+  grid-area: contact; }
+  #grid > #contact input, #grid > #contact textarea {
+    font-family: 'Open Sans', sans-serif;
+    width: 98%; }
+
+#grid > #facebook {
+  grid-area: facebook; }
+
+footer.mobile {
+  text-align: center;
+  font-family: 'Roboto Slab';
+  color: #EDE6E6; }
+  footer.mobile p {
+    background-color: #060708;
+    margin: auto; }
+
+#hamburger {
+  font-size: 3em;
+  width: 0;
+  margin: 0 auto;
+  transform: translateX(-0.25em);
+  transition: 1s all; }
+
+#hamburger:hover {
+  cursor: pointer; }
+
+nav.mobile {
+  display: none;
+  position: fixed;
+  z-index: 3;
+  width: 100vw;
+  text-align: center;
+  background-color: #060708;
+  color: #EDE6E6;
+  font-family: 'Open Sans', sans-serif; }
+  nav.mobile ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none; }
+    nav.mobile ul li {
+      padding: 1vh 0; }
+      nav.mobile ul li a {
+        text-decoration: none;
+        color: #EDE6E6; }
+      nav.mobile ul li div {
+        display: none;
+        font-size: 70%; }
+    nav.mobile ul .link:hover {
+      background-color: #86C958; }
+    nav.mobile ul .dropdown:hover {
+      cursor: pointer; }
+
+.mobile, #hamburger {
+  display: none; }
+
+@media screen and (orientation: portrait), screen and (max-width: 1000px) {
+  .mobile {
+    display: initial; }
+
+  #hamburger {
+    display: block; }
+
+  footer.desktop {
+    display: none; }
+
+  header nav.desktop {
+    display: none; }
+  header img {
+    width: 90vw; }
+
+  header.small #logo {
+    transform: none;
+    height: 100%; }
+  header.small img {
+    width: 65vw; }
+  header.small #hamburger {
+    transform: translate(36vw, -10vh); }
+
+  #slideshow, #slideshow > img {
+    height: 35vh;
+    width: 100vw; }
+
+  #slideshow img {
+    object-fit: cover; }
+
+  #slideshow .arrow {
+    font-size: 3em;
+    padding: 0 2vw 2vw 2vw; }
+
+  #grid {
+    grid-template-areas: "history history history history" "history history history history" "history history history history" "history history history history"; }
+    #grid #contact, #grid #facebook {
+      display: none; } }
+
+/*# sourceMappingURL=main.css.map */

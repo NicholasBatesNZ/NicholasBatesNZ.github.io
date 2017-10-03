@@ -1,9 +1,3 @@
-/*
-    THIS FILE IS OUT OF DATE
-    It contains bugs and is not being maintained
-    Take the latest verion from the Tennis site
-*/
-
 $(document).ready(function() {
 
     $(document).on("scroll", function() {
@@ -32,6 +26,7 @@ $(document).ready(function() {
     var destination = 0;
     createSlideDots();
     function createSlideDots() {
+        $("#slideshow .dot").remove();
         var emsNeeded = 2 * $images.length - 1;
         var emToPx = parseFloat($("body").css("font-size"));
         var pxsSpareEachSide = ($(document).width() - emToPx * emsNeeded) / 2;
@@ -99,7 +94,7 @@ $(document).ready(function() {
         $("#facebook").empty();
         var fbWidth = Math.round($("#facebook").width() / 20 * 19);
         var fbHeight = Math.round($("#facebook").height() / 20 * 19);
-        $("#facebook").append("<iframe src='https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FNorthShoreYouthMusic&tabs=timeline&" +
+        $("#facebook").append("<iframe src='https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FMairangi-Bay-Tennis-Club-685812498418446&tabs=timeline&" +
         "width=" + fbWidth +"&height=" + fbHeight + "&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId' " +
         "width='" + fbWidth + "' height='" + fbHeight + "' style='border:none;overflow:hidden' scrolling='no' frameborder='0' allowTransparency='true'></iframe>");
     }
