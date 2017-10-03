@@ -8,7 +8,15 @@ $(document).ready(function() {
         $(this).children("div").toggleClass("active");
     });
     $("nav.mobile ul .dropdown").click(function() {
-        $(this).children("div").slideToggle();
+        $(this).toggleClass("active");
+        $thisDiv = $(this).children("div");
+        $thisDiv.slideToggle();
+        $("nav.mobile ul .dropdown div").each(function() {
+            if ($(this).css("display") != "none" && !$(this).is($thisDiv)) {
+                $(this).parent("li").toggleClass("active");
+                $(this).slideToggle();
+            }
+        });
     });
     $("nav.desktop .link, nav.mobile ul .link").click(function() {
         $(this).children("a")[0].click();

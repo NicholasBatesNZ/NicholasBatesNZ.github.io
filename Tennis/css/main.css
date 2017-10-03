@@ -247,8 +247,16 @@ nav.mobile {
         font-size: 70%; }
     nav.mobile ul .link:hover {
       background-color: #86C958; }
+    nav.mobile ul .dropdown span {
+      padding: 0 auto; }
     nav.mobile ul .dropdown:hover {
       cursor: pointer; }
+    nav.mobile ul .dropdown.active {
+      background-color: #484999; }
+      nav.mobile ul .dropdown.active a {
+        color: #86C958; }
+      nav.mobile ul .dropdown.active li:hover a {
+        color: #484999; }
 
 .mobile, #hamburger {
   display: none; }
