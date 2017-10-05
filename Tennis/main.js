@@ -8,11 +8,9 @@ $(document).ready(function() {
         $(this).children("div").toggleClass("active");
     });
     $("nav.mobile ul .dropdown").click(function() {
-        $(this).toggleClass("active");
         $thisDiv = $(this).children("div");
-        $thisDiv.slideToggle();
         $("nav.mobile ul .dropdown div").each(function() {
-            if ($(this).css("display") != "none" && !$(this).is($thisDiv)) {
+            if ($(this).css("display") != "none" || $(this).is($thisDiv)) {
                 $(this).parent("li").toggleClass("active");
                 $(this).slideToggle();
             }
