@@ -9,6 +9,8 @@ const servers = [
     }
 ];
 
+const container = document.querySelector('#container');
+
 (async () => {
     (await Promise.all(servers.map(async server => {
         const response = await fetch(`https://api.mcsrvstat.us/2/${server.ip}`);
@@ -17,6 +19,6 @@ const servers = [
     }))).forEach(result => {
         const node = document.createElement('p');
         node.textContent = result;
-        document.querySelector('#container').appendChild(node);
+        container.appendChild(node);
     });
 })();
