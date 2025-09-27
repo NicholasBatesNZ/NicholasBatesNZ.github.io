@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zap | The Fun Way to Build Your Savings Habit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* C                        <div class="column-icon">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><title>Illustration of a lightning bolt</title><defs><filter id="zapGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><!-- Smaller solid yellow circle with glow --><circle cx="50" cy="50" r="25" fill="#FFC65A" filter="url(#zapGlow)"/><!-- Lightning bolt (emoji style) --><path d="M55 10L30 50H45L25 90L70 45H55L75 10Z" fill="#6A45FF"/></svg>
+                        </div>Variables for Easy Customization */
+        :root {
+            --primary-color: #6A45FF;
+            --primary-hover: #5A38E0;
+            --secondary-color: #00C49A;
+            --accent-color: #FFC65A;
+            --dark-bg: #2C2541;
+            --light-bg: #F8F9FA;
+            --text-dark: #333333;
+            --text-light: #FFFFFF;
+            --text-secondary: #555555;
+            --border-color: #EAEAEA;
+        }
+
+        /* General Reset & Body Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            background-color: #FFFFFF;
+        }
+
+        /* Container for Centering Content */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section Padding */
+        section {
+            padding: 80px 0;
+        }
+        
+        section:nth-of-type(odd) {
+            background-color: var(--light-bg);
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.2rem; text-align: center; }
+        h3 { font-size: 1.5rem; }
+        p { margin-bottom: 20px; color: var(--text-secondary); max-width: 600px; }
+        .center-text { text-align: center; margin-left: auto; margin-right: auto; }
+
+        /* Buttons & Forms */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-color);
+            color: var(--text-light) !important;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+        
+        .btn-nav {
+            padding: 8px 20px;
+            font-size: 0.9rem;
+        }
+        
+        .cta-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+            max-width: 500px;
+        }
+
+        .cta-form input[type="email"] {
+            flex-grow: 1;
+            padding: 12px 20px;
+            border-radius: 50px;
+            border: 1px solid var(--border-color);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .cta-form input[type="email"]:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(106, 69, 255, 0.2);
+        }
+
+        .microcopy {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        /* Header & Navigation */
+        .main-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .main-header.scrolled {
+             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: var(--text-dark);
+        }
+        .logo span { color: var(--primary-color); }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        #hero {
+            padding-top: 100px;
+            padding-bottom: 120px;
+            text-align: left;
+        }
+        #hero .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+        
+        .hero-content {
+            flex: 1.2;
+        }
+
+        .hero-visual {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .hero-visual svg {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+        }
+        
+        /* Features/Columns Layout */
+        .columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .column {
+            padding: 20px;
+        }
+        
+        .column-icon {
+            height: 140px; /* Increased height to better accommodate SVGs */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .column-icon svg {
+            max-height: 100%; /* Ensure SVG scales within its container */
+            max-width: 100%;
+            display: block; /* Remove extra space below SVG */
+        }
+
+        /* How it Works */
+        #how-it-works .columns {
+            align-items: flex-start;
+        }
+        
+        /* Beta Perks Section */
+        #beta-perks .column {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        #beta-perks .column:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        
+        /* Final CTA Section */
+        #final-cta {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+        }
+        #final-cta h2, #final-cta p {
+            color: var(--text-light);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 60px auto 0;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+        }
+        
+        .faq-item summary {
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none; /* Hide default triangle */
+            position: relative;
+            padding-right: 30px;
+        }
+
+        .faq-item summary::-webkit-details-marker { display: none; }
+        
+        .faq-item summary::after {
+            content: '+';
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-item p {
+            padding-top: 15px;
+            margin-bottom: 0;
+        }
+        
+        /* Final CTA Section */
+        #final-cta p {
+            max-width: none;
+        }
+        
+        /* Footer */
+        .main-footer {
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content p {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            max-width: none;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Responsive Design */
+        @media(max-width: 992px) {
+             #hero .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-content {
+                order: 2;
+            }
+            .hero-visual {
+                order: 1;
+                margin-bottom: 40px;
+            }
+            .cta-form {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.8rem; }
+            
+            .columns {
+                grid-template-columns: 1fr;
+            }
+
+            .main-nav ul {
+                display: none; /* Simple hiding for splash page, could be replaced with hamburger menu */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .cta-form {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="main-header" id="main-header">
+        <div class="container">
+            <a href="#" class="logo">Zap<span>.</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#beta-perks">Why Zap?</a></li>
+                    <li><a href="#final-cta" class="btn btn-nav">Join the Beta</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Finally, a Savings App You'll Actually Want to Use.</h1>
+                    <p>Zap makes saving money feel less like a chore and more like a game. Build positive financial habits through small, fun actions that lead to real, visible progress.</p>
+                    <form id="beta-form" class="cta-form" action="#" method="POST">
+                        <input type="email" name="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn">Sign Up for the Beta</button>
+                    </form>
+                    <p id="form-message" class="microcopy">Get exclusive early access and help shape the future of Zap. Limited spots available.</p>
+                </div>
+                <div class="hero-visual">
+                    <svg viewBox="0 0 454 394" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <title>Illustration of a person happily managing their finances on a large phone</title>
+                        <rect x="177" y="15" width="200" height="364" rx="30" fill="#F8F9FA"/>
+                        <rect x="167" y="10" width="220" height="374" rx="40" stroke="#6A45FF" stroke-width="6"/>
+                        <rect x="196" y="65" width="146" height="12" rx="6" fill="#EAEAEA"/>
+                        <rect x="196" y="93" width="90" height="12" rx="6" fill="#EAEAEA"/>
+                        <rect x="196" y="151" width="146" height="60" rx="10" fill="white" stroke="#EAEAEA" stroke-width="2"/>
+                        <circle cx="216" cy="181" r="15" fill="#00C49A"/>
+                        <rect x="246" y="175" width="70" height="12" rx="6" fill="#EAEAEA"/>
+                        <rect x="196" y="227" width="146" height="60" rx="10" fill="white" stroke="#EAEAEA" stroke-width="2"/>
+                        <circle cx="216" cy="257" r="15" fill="#FFC65A"/>
+                        <rect x="246" y="251" width="80" height="12" rx="6" fill="#EAEAEA"/>
+                        <rect x="256" y="25" width="60" height="8" rx="4" fill="#333"/>
+                        <circle cx="277" cy="342" r="25" fill="#6A45FF"/>
+                        <path d="M271 342L276 347L286 327" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M127 121C53.5 133 2.5 204.5 18 280C33.5 355.5 130.5 385 178 350" stroke="#FFC65A" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M102 34C109.5 18.5 168.5 -10 209 13.5C249.5 37 236 103 209 111" stroke="#00C49A" stroke-width="4" stroke-linecap="round"/>
+                        <g clip-path="url(#clip0_8_8)">
+                        <path d="M96.7915 220.849C96.7915 220.849 119.333 194.558 75.2915 172.951C31.2498 151.345 28.1665 106.88 28.1665 106.88" stroke="#6A45FF" stroke-width="6" stroke-linecap="round"/>
+                        <path d="M112.91 146.126C103.559 135.597 88.7512 134.425 78.2223 143.776C67.6934 153.127 66.521 167.935 75.8723 178.464" fill="#EBF0FF"/>
+                        <path d="M108.667 151.168C108.667 151.168 110.125 158.459 104.417 162.709C98.7082 166.959 91.4165 163.418 91.4165 163.418" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M83.001 220.125C91.5427 176.083 141.668 165.375 141.668 165.375L142.376 250.75C142.376 250.75 118.543 252.958 112.918 245.75C107.293 238.542 97.501 234.708 83.001 220.125Z" fill="#6A45FF"/>
+                        <path d="M88.4165 110.417C98.8332 108.208 109.958 116.854 112.916 128.667C115.875 140.479 108.666 152.292 98.2498 154.5C87.8332 156.708 76.7082 148.063 73.7498 136.25C70.7915 124.437 77.9998 112.625 88.4165 110.417Z" fill="#FFC65A"/>
+                        <ellipse cx="94.1665" cy="133.5" rx="5.625" ry="4.20833" fill="#333"/>
+                        <ellipse cx="109.375" cy="130.667" rx="5.625" ry="4.20833" fill="#333"/>
+                        <path d="M103.708 141.208C105.167 142.667 107.292 142.667 108.75 141.208" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section id="problem">
+            <div class="container">
+                <h2 class="center-text">Saving can feel complicated. It doesn't have to be.</h2>
+                <div class="columns">
+                    <div class="column">
+                        <div class="column-icon">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <title>Illustration of a complex path becoming simple</title>
+                                <path d="M20 80C10 70 18 35 27 25C36 15 52 5 65 15C78 25 88 50 84 63C80 76 50 85 40 80" stroke="#EAEAEA" stroke-width="6" stroke-linecap="round"/>
+                                <path d="M15 50C25 55 55 60 80 35" stroke="#6A45FF" stroke-width="6" stroke-linecap="round"/>
+                                <circle cx="15" cy="50" r="8" fill="#FFC65A"/>
+                                <circle cx="80" cy="35" r="8" fill="#00C49A"/>
+                            </svg>
+                        </div>
+                        <h3>For When Spreadsheets Don't Click</h3>
+                        <p>Detailed budgets are powerful, but they aren't for everyone. Zap is designed for real life, helping you save in the moments that matter without the overwhelming setup.</p>
+                    </div>
+                    <div class="column">
+                        <div class="column-icon">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <title>Illustration of a plant growing from a coin</title>
+                                <circle cx="50" cy="70" r="16" fill="#FFC65A"/>
+                                <path d="M50 70C50 60 50 20 50 20" stroke="#00C49A" stroke-width="6" stroke-linecap="round"/>
+                                <path d="M50 45C38 40 33 25 38 20" stroke="#00C49A" stroke-width="6" stroke-linecap="round"/>
+                                <path d="M50 55C62 50 67 35 62 30" stroke="#00C49A" stroke-width="6" stroke-linecap="round"/>
+                                <path d="M45 72L42 75" stroke="#D4A13D" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>Making Your Progress Visible</h3>
+                        <p>It’s hard to stay motivated when your savings are out of sight, out of mind. We make every small win feel like a big achievement to keep your momentum going.</p>
+                    </div>
+                    <div class="column">
+                       <div class="column-icon">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <title>Illustration of a flexible, winding path</title>
+                                <path d="M20 80C20 65 40 60 50 60C60 60 80 55 80 40C80 25 60 20 50 20C40 20 20 15 20 0" stroke="#EAEAEA" stroke-width="6" stroke-linecap="round" transform="translate(0, 10)"/>
+                                <path d="M80 80C80 68 68 60 50 60C32 60 20 52 20 40C20 28 32 20 50 20C68 20 80 12 80 0" stroke="#6A45FF" stroke-width="6" stroke-linecap="round" stroke-dasharray="12 9" transform="translate(0, 10)"/>
+                                <circle cx="80" cy="90" r="8" fill="#FFC65A"/>
+                            </svg>
+                        </div>
+                        <h3>Designed for Real Life</h3>
+                        <p>Life is full of unexpected turns and impulses. Zap is your non-judgmental co-pilot, helping you gently redirect spending into savings, one positive choice at a time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works">
+            <div class="container">
+                <h2 class="center-text">Get Started in Minutes</h2>
+                <div class="columns">
+                     <div class="column">
+                        <h3>1. Connect Securely</h3>
+                        <p>Link your bank account in seconds using bank-grade security and encryption. Your trust and privacy are our top priority.</p>
+                    </div>
+                    <div class="column">
+                        <h3>2. Set a Goal</h3>
+                        <p>Whether it's for a concert, a new laptop, or just a rainy-day fund, give your savings a purpose. We’ll help you break it down into micro-goals.</p>
+                    </div>
+                    <div class="column">
+                        <h3>3. Watch it Grow</h3>
+                        <p>Respond to fun nudges, maintain your streak, and let our smart automation do the rest. Celebrate real progress with badges and rewards.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="beta-perks">
+            <div class="container">
+                <h2 class="center-text">Be the First to Zap Your Savings</h2>
+                 <p class="center-text">As an early beta tester, you’re more than just a user—you’re a co-creator. You'll get a unique opportunity to shape the future of Zap and enjoy some exclusive perks.</p>
+                <div class="columns">
+                    <div class="column">
+                        <div class="column-icon">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><title>Illustration of a lightning bolt</title><defs><filter id="zapGlow" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="6" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><!-- Smaller solid yellow circle with bigger glow --><circle cx="50" cy="50" r="25" fill="#FFC65A" filter="url(#zapGlow)"/><!-- Lightning bolt (emoji style) --><path d="M55 10L30 50H45L25 90L70 45H55L75 10Z" fill="#6A45FF"/></svg>
+                        </div>
+                        <h3>Get Exclusive First Access</h3>
+                        <p>Use the app before anyone else in New Zealand and get a head start on building your savings habit.</p>
+                    </div>
+                    <div class="column">
+                        <div class="column-icon">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><title>Illustration of hands shaping a star</title><defs><filter id="starGlow2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path d="M35 85C15 80 15 50 35 45M65 85C85 80 85 50 65 45" stroke="#6A45FF" stroke-width="6" stroke-linecap="round"/><path d="M50 50L56.5 36.5L71 34L60.5 24L63 9L50 16L37 9L39.5 24L29 34L43.5 36.5L50 50Z" fill="#FFC65A" filter="url(#starGlow2)"/></svg>
+                        </div>
+                        <h3>Help Shape the Product</h3>
+                        <p>Your feedback will directly influence our features, design, and roadmap. Help us build the savings app you've always wanted.</p>
+                    </div>
+                    <div class="column">
+                        <div class="column-icon">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><title>Illustration of a diamond badge</title><defs><filter id="diamondGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path d="M20 38L50 85L80 38L65 15L35 15L20 38Z" fill="#FFC65A" filter="url(#diamondGlow)"/><path d="M20 38L50 85L80 38L65 15L35 15L20 38Z" fill="none" stroke="#6A45FF" stroke-width="4"/><path d="M50 83L37 17" stroke="#6A45FF" stroke-width="3"/><path d="M50 83L63 17" stroke="#6A45FF" stroke-width="3"/><path d="M22 38H78" stroke="#6A45FF" stroke-width="3"/></svg>
+                        </div>
+                        <h3>Unlock Founder Perks</h3>
+                        <p>Enjoy the beta for free and be eligible for special rewards, including a permanent "Founding Member" badge in your profile.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="faq">
+            <div class="container">
+                <h2 class="center-text">Your Questions, Answered</h2>
+                <div class="faq-container">
+                    <details class="faq-item">
+                        <summary>Is my money and data safe?</summary>
+                        <p>Absolutely. We use state-of-the-art, bank-level security (256-bit encryption) and a secure Open Banking API to connect to your account. We never store your banking credentials.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Is the beta free to use?</summary>
+                        <p>Yes! The beta program is completely free for all our early testers. It's our way of saying thanks for helping us build Zap.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>When does the beta start?</summary>
+                        <p>We're aiming to send out the first batch of invites soon! Sign up now, and we'll notify you as soon as a spot opens up.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Does Zap work with New Zealand banks?</summary>
+                        <p>Yes, Zap is being built to connect with all major banks in New Zealand. We want to ensure a smooth and secure experience for Kiwis from day one.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section id="final-cta">
+            <div class="container center-text">
+                <h2>Ready to Kickstart a New Savings Habit?</h2>
+                <p>Spots for our exclusive beta are limited. Enter your email to secure your place in line.</p>
+                 <form id="beta-form-2" class="cta-form" style="margin-left: auto; margin-right: auto;" action="#" method="POST">
+                    <input type="email" name="email2" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn">Sign Up for the Beta</button>
+                </form>
+                <p id="form-message-2" class="microcopy"></p>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <p>© 2025 Zap | New Zealand</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Optional JavaScript for better user experience
+
+        // 1. Add a shadow to the header when scrolling
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // 2. Handle form submission to show a thank you message without reloading
+        const handleFormSubmit = (event) => {
+            event.preventDefault(); // Stop the form from submitting the default way
+            
+            const form = event.target;
+            const messageElId = form.id === 'beta-form' ? 'form-message' : 'form-message-2';
+            const messageEl = document.getElementById(messageElId);
+            
+            // In a real application, you would send the data to your server here.
+            // For this demo, we'll just show a success message.
+            
+            form.style.display = 'none'; // Hide the form
+            messageEl.textContent = "Thanks for signing up! We'll be in touch soon. 🎉";
+            messageEl.style.color = 'var(--primary-color)';
+            if(form.id === 'beta-form-2') {
+                messageEl.style.color = '#FFFFFF';
+            }
+        };
+
+        const form1 = document.getElementById('beta-form');
+        const form2 = document.getElementById('beta-form-2');
+        form1.addEventListener('submit', handleFormSubmit);
+        form2.addEventListener('submit', handleFormSubmit);
+
+    </script>
+</body>
+</html>
